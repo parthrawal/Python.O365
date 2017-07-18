@@ -9,8 +9,9 @@ import SharePointOnline
 
 After importing use following code to get the required headers for accessing the data on SharePoint Online.
 
-_headers=SharePointOnline.SPOnlineHeaders("User Email Address","Password","https://XXX-YYY.sharepoint.com")    
-    _DataDict=SharePointOnline.GetAtomFeedDataFromSPOnline(_headers,"ListName to access","https://XXX-YYY.sharepoint.com","/sites/dev/_api/web/lists/getByTitle('{}')/Items")
+TopLevelUrl='https://XXX-YYY.sharepoint.com'
+_headers=SharePointOnline.SPOnlineHeaders("User Email Address","Password",TopLevelUrl)  
+_DataDict=SharePointOnline.GetAtomFeedDataFromSPOnline(_headers,"ListName",TopLevelUrl,"/sites/dev/_api/web/lists/getByTitle('{}')/Items")
     
 Above code should return a dictionary with required data.
 
